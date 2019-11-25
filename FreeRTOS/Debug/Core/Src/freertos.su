@@ -1,0 +1,6 @@
+freertos.c:79:6:MX_FREERTOS_Init	192	static
+freertos.c:157:6:StartDefaultTask	16	static
+freertos.c:175:6:Blink1	32	static
+freertos.c:215:6:Blink2	32	static
+freertos.c:241:6:Trigg	24	static
+freertos.c:263:6:Userbutton	32	static

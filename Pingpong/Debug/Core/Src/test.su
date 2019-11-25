@@ -1,0 +1,10 @@
+test.c:17:6:Test_program	8	static
+test.c:32:6:Test_led_on	16	static
+test.c:44:6:Test_set_led	16	static
+test.c:54:6:Test_reset_led	16	static
+test.c:64:6:Test_set_leds	8	static
+test.c:71:6:Test_reset_leds	8	static
+test.c:77:6:Test_game_indication	8	static
+test.c:83:6:Test_duel_over	8	static
+test.c:90:6:Test_show_points	8	static
+test.c:95:6:Test_buttons	16	static

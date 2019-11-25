@@ -1,0 +1,10 @@
+pingpong_functions.c:22:6:Led_on	24	static
+pingpong_functions.c:69:6:Set_led	16	static
+pingpong_functions.c:86:6:Reset_led	16	static
+pingpong_functions.c:103:6:Set_leds	16	static
+pingpong_functions.c:117:6:Reset_leds	16	static
+pingpong_functions.c:131:6:Game_indication	16	static
+pingpong_functions.c:146:6:Duel_over	24	static
+pingpong_functions.c:173:6:Show_points	24	static
+pingpong_functions.c:190:6:R_hit	8	static
+pingpong_functions.c:200:6:L_hit	8	static

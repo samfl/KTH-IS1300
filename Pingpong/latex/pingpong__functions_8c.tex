@@ -1,0 +1,256 @@
+\hypertarget{pingpong__functions_8c}{}\doxysection{Core/\+Src/pingpong\+\_\+functions.c File Reference}
+\label{pingpong__functions_8c}\index{Core/Src/pingpong\_functions.c@{Core/Src/pingpong\_functions.c}}
+
+
+Pingpong, state machine for Pingpong-\/program.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$gpio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pingpong__functions_8c_aefa397001b1adc3e4e511ce163e7b032}{Led\+\_\+on}} (uint8\+\_\+t Lednr)
+\begin{DoxyCompactList}\small\item\em Led\+\_\+on, turn one of the pingpong leds on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_ad8817a7a398af8c2d1b499214de611a6}{Set\+\_\+led}} (uint8\+\_\+t Lednr)
+\begin{DoxyCompactList}\small\item\em Set\+\_\+led, Set one og the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_adb8b36ca8841c9f01d1033d63b65a231}{Reset\+\_\+led}} (uint8\+\_\+t Lednr)
+\begin{DoxyCompactList}\small\item\em Reset\+\_\+led, reset one of the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_afb6230c4ebabd93eb2eee774067c571b}{Set\+\_\+leds}} (void)
+\begin{DoxyCompactList}\small\item\em Set all of the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_a3ee3ff5625f90b4413940bddf9304b8b}{Reset\+\_\+leds}} (void)
+\begin{DoxyCompactList}\small\item\em Reset all of the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_a6450482f0666573c31077baf63d2373c}{Game\+\_\+indication}} (void)
+\begin{DoxyCompactList}\small\item\em Blinking the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_a59c9562d28d609d53111b18d90fd34e5}{Duel\+\_\+over}} (uint8\+\_\+t player)
+\begin{DoxyCompactList}\small\item\em Blinking the leds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pingpong__functions_8c_a1786cf1cc7c4704b55aa0e8dac4a11da}{Show\+\_\+points}} (uint8\+\_\+t L\+\_\+points, uint8\+\_\+t R\+\_\+points)
+\begin{DoxyCompactList}\small\item\em Show\+\_\+points, shows points after missed ball. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pingpong__functions_8c_ac3ec929a1c7a135f28ea560985c11f7f}{R\+\_\+hit}} (void)
+\begin{DoxyCompactList}\small\item\em R\+\_\+hit, check if R button is pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pingpong__functions_8c_af92045a1558079088bab221ec329dbb2}{L\+\_\+hit}} (void)
+\begin{DoxyCompactList}\small\item\em L\+\_\+hit, check if L button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pingpong, state machine for Pingpong-\/program. 
+
+Pingpong, functions for Pingpong-\/program.
+
+\begin{DoxyAuthor}{Author}
+Sam Florin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+08-\/November-\/2019
+\end{DoxyDate}
+Structure/state machine for pipong program.
+
+\begin{DoxyAuthor}{Author}
+Sam Florin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/August-\/2019
+\end{DoxyDate}
+Functions and structures for program Pingpong
+
+\begin{DoxyAuthor}{Author}
+Sam Florin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06-\/November-\/2019
+\end{DoxyDate}
+Structure/state machine for pingpong program. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pingpong__functions_8c_a59c9562d28d609d53111b18d90fd34e5}\label{pingpong__functions_8c_a59c9562d28d609d53111b18d90fd34e5}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Duel\_over@{Duel\_over}}
+\index{Duel\_over@{Duel\_over}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Duel\_over()}{Duel\_over()}}
+{\footnotesize\ttfamily void Duel\+\_\+over (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{player }\end{DoxyParamCaption})}
+
+
+
+Blinking the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_a6450482f0666573c31077baf63d2373c}\label{pingpong__functions_8c_a6450482f0666573c31077baf63d2373c}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Game\_indication@{Game\_indication}}
+\index{Game\_indication@{Game\_indication}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Game\_indication()}{Game\_indication()}}
+{\footnotesize\ttfamily void Game\+\_\+indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Blinking the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_af92045a1558079088bab221ec329dbb2}\label{pingpong__functions_8c_af92045a1558079088bab221ec329dbb2}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!L\_hit@{L\_hit}}
+\index{L\_hit@{L\_hit}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{L\_hit()}{L\_hit()}}
+{\footnotesize\ttfamily bool L\+\_\+hit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+L\+\_\+hit, check if L button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, true if L button pushed, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_aefa397001b1adc3e4e511ce163e7b032}\label{pingpong__functions_8c_aefa397001b1adc3e4e511ce163e7b032}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Led\_on@{Led\_on}}
+\index{Led\_on@{Led\_on}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Led\_on()}{Led\_on()}}
+{\footnotesize\ttfamily void Led\+\_\+on (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Lednr }\end{DoxyParamCaption})}
+
+
+
+Led\+\_\+on, turn one of the pingpong leds on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & Lednr , number to the Led that is turned on Lednr can be 1-\/8, all other values turns all leds off \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_ac3ec929a1c7a135f28ea560985c11f7f}\label{pingpong__functions_8c_ac3ec929a1c7a135f28ea560985c11f7f}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!R\_hit@{R\_hit}}
+\index{R\_hit@{R\_hit}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{R\_hit()}{R\_hit()}}
+{\footnotesize\ttfamily bool R\+\_\+hit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+R\+\_\+hit, check if R button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, true if R button pushed, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_adb8b36ca8841c9f01d1033d63b65a231}\label{pingpong__functions_8c_adb8b36ca8841c9f01d1033d63b65a231}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Reset\_led@{Reset\_led}}
+\index{Reset\_led@{Reset\_led}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Reset\_led()}{Reset\_led()}}
+{\footnotesize\ttfamily void Reset\+\_\+led (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Lednr }\end{DoxyParamCaption})}
+
+
+
+Reset\+\_\+led, reset one of the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & Lednr , number to the led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_a3ee3ff5625f90b4413940bddf9304b8b}\label{pingpong__functions_8c_a3ee3ff5625f90b4413940bddf9304b8b}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Reset\_leds@{Reset\_leds}}
+\index{Reset\_leds@{Reset\_leds}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Reset\_leds()}{Reset\_leds()}}
+{\footnotesize\ttfamily void Reset\+\_\+leds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset all of the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_ad8817a7a398af8c2d1b499214de611a6}\label{pingpong__functions_8c_ad8817a7a398af8c2d1b499214de611a6}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Set\_led@{Set\_led}}
+\index{Set\_led@{Set\_led}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Set\_led()}{Set\_led()}}
+{\footnotesize\ttfamily void Set\+\_\+led (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Lednr }\end{DoxyParamCaption})}
+
+
+
+Set\+\_\+led, Set one og the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & Lednr , number to the led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_afb6230c4ebabd93eb2eee774067c571b}\label{pingpong__functions_8c_afb6230c4ebabd93eb2eee774067c571b}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Set\_leds@{Set\_leds}}
+\index{Set\_leds@{Set\_leds}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Set\_leds()}{Set\_leds()}}
+{\footnotesize\ttfamily void Set\+\_\+leds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set all of the leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pingpong__functions_8c_a1786cf1cc7c4704b55aa0e8dac4a11da}\label{pingpong__functions_8c_a1786cf1cc7c4704b55aa0e8dac4a11da}} 
+\index{pingpong\_functions.c@{pingpong\_functions.c}!Show\_points@{Show\_points}}
+\index{Show\_points@{Show\_points}!pingpong\_functions.c@{pingpong\_functions.c}}
+\doxysubsubsection{\texorpdfstring{Show\_points()}{Show\_points()}}
+{\footnotesize\ttfamily void Show\+\_\+points (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{L\+\_\+points,  }\item[{uint8\+\_\+t}]{R\+\_\+points }\end{DoxyParamCaption})}
+
+
+
+Show\+\_\+points, shows points after missed ball. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 1} & uint8\+\_\+t L\+\_\+points points for left player \\
+\hline
+{\em 2} & uint8\+\_\+t R\+\_\+points points for right player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void, no return value 
+\end{DoxyReturn}
