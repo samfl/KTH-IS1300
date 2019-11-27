@@ -176,7 +176,6 @@ void Blink1(void *argument)
 {
 	/* USER CODE BEGIN Blink1 */
 
-	uint16_t varv,antalvarv=5000;
 	TickType_t xLastWakeTime;
 	const TickType_t xPeriod = pdMS_TO_TICKS(100) ; // ms to ticks
 	// Initialise the xLastWakeTime variable with the current time.
@@ -215,7 +214,6 @@ void Blink1(void *argument)
 void Blink2(void *argument)
 {
 	/* USER CODE BEGIN Blink1 */
-	uint16_t varv,antalvarv=10000;
 	TickType_t xLastWakeTime;
 	const TickType_t xPeriod = pdMS_TO_TICKS(20) ; // ms to ticks
 	// Initialise the xLastWakeTime variable with the current time.
@@ -272,26 +270,26 @@ void Userbutton(void *argument)
 	/* Infinite loop */
 
 
-	 for( ;; ) {
-		 /* ... Do other things. */
-		 if( xSemaphore != NULL ) {
-			 /* See if the mutex can be obtained. If the mutex is not available
+	for( ;; ) {
+		/* ... Do other things. */
+		if( xSemaphore != NULL ) {
+			/* See if the mutex can be obtained. If the mutex is not available
 			 wait 10 ticks to see if it becomes free. */
-			 if( HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)==GPIO_PIN_RESET && HAL_GPIO_ReadPin(LD2_GPIO_Port, LD2_Pin)==GPIO_PIN_RESET) {
-				 /* The mutex was successfully obtained so the shared resource can be
+			if( HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)==GPIO_PIN_RESET && HAL_GPIO_ReadPin(LD2_GPIO_Port, LD2_Pin)==GPIO_PIN_RESET) {
+				/* The mutex was successfully obtained so the shared resource can be
 				 accessed safely. */
-				 /* ... */
-				 /* Access to the shared resource is complete, so the mutex is
+				/* ... */
+				/* Access to the shared resource is complete, so the mutex is
 				 returned. */
-				 xSemaphoreTake( xSemaphore, 10 );
-			 } else {
-				 /* The mutex could not be obtained even after waiting 10 ticks, so
+				xSemaphoreTake( xSemaphore, 10 );
+			} else {
+				/* The mutex could not be obtained even after waiting 10 ticks, so
 				 the shared resource cannot be accessed. */
-				 xSemaphoreGive( xSemaphore );
-			 }
-		 }
-		 vTaskDelayUntil( &xLastWakeTime, xPeriod );
-	 }
+				xSemaphoreGive( xSemaphore );
+			}
+		}
+		vTaskDelayUntil( &xLastWakeTime, xPeriod );
+	}
 	/* USER CODE END Userbutton */
 }
   /* USER CODE END Userbutton */

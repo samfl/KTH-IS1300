@@ -29,7 +29,8 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
-
+#include "string.h"
+#include "test.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -66,10 +67,22 @@ void Error_Handler(void);
 #define USART_RX_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define Rtc_out_cal_Pin GPIO_PIN_2
+#define Rtc_out_cal_GPIO_Port GPIOB
+#define Chip_select_Pin GPIO_PIN_12
+#define Chip_select_GPIO_Port GPIOB
+#define Display_red_Pin GPIO_PIN_7
+#define Display_red_GPIO_Port GPIOC
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define Display_reset_Pin GPIO_PIN_15
+#define Display_reset_GPIO_Port GPIOA
+#define Display_green_Pin GPIO_PIN_10
+#define Display_green_GPIO_Port GPIOC
+#define Display_white_Pin GPIO_PIN_11
+#define Display_white_GPIO_Port GPIOC
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */

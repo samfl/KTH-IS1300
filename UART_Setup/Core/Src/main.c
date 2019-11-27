@@ -97,14 +97,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  HAL_UART_Transmit(&huart5, (uint8_t*)hello, strlen(hello), 5000);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_UART_Receive(&huart5, &Tecken, 1, 5000);
-	  HAL_UART_Transmit(&huart5, &Tecken, 1, 5000);
   }
   /* USER CODE END 3 */
 }
