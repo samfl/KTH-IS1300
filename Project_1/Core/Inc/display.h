@@ -18,6 +18,9 @@
 void Set_cs(uint8_t);
 void Write_data(char);
 void Write_instruciton(char);
+void Reset_display(void);
 void Init_display(void);
 void Delay_spi(void);
 void Display_color(char[]);
+void prephexa(uint8_t, uint8_t *);
+void LCDinit(void);

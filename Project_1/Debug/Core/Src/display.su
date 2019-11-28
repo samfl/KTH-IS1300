@@ -1,8 +1,11 @@
 display.c:10:6:Set_cs	16	static
 display.c:14:6:Write_data	16	static
-display.c:23:6:Write_string	16	static
-display.c:29:6:Write_instruction	16	static
-display.c:41:6:Delay_spi	8	static
-display.c:45:6:Clear_display	8	static
-display.c:49:6:Init_display	8	static
-display.c:66:6:Display_color	16	static
+display.c:31:6:Write_string	16	static
+display.c:37:6:Delay_spi	8	static
+display.c:41:6:Clear_display	8	static
+display.c:45:6:Reset_display	8	static
+display.c:52:6:Write_instruction	16	static
+display.c:72:6:Init_display	8	static
+display.c:88:6:Display_color	16	static
+display.c:99:6:prephexa	16	static
+display.c:106:6:LCDinit	16	static
