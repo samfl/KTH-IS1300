@@ -17,11 +17,8 @@
 
 void Set_cs(uint8_t);
 void Write_data(uint8_t);
-void Write_instruciton(char);
 void Reset_display(void);
-void Init_display(void);
 void Delay_spi(void);
 void Display_color(char[]);
-void Prep_ins(uint8_t, uint8_t *);
-void LCDinit(void);
+void Init_display(void);
 void Spi_rdy(void);

@@ -14,9 +14,8 @@ void Test_program(void) {
 }
 
 void Test_display(void) {
-//	Init_display();
+	Init_display();
 //	Write_data(0x61);
-	LCDinit();
 }
 
 void Test_display_background(char color[]) {
