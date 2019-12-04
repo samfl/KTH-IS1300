@@ -7,5 +7,5 @@ display.c:45:6:Reset_display	8	static
 display.c:52:6:Write_instruction	16	static
 display.c:72:6:Init_display	8	static
 display.c:88:6:Display_color	16	static
-display.c:99:6:prephexa	16	static
-display.c:106:6:LCDinit	16	static
+display.c:95:6:prephexa	16	static
+display.c:102:6:LCDinit	16	static

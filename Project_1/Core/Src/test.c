@@ -7,9 +7,7 @@
 #include <test.h>
 
 void Test_program(void) {
-//	Test_display_background("red");
-//	Test_display_background("green");
-	Test_display_background("white");
+	Test_display_background("red");
 	Test_display();
 
 	return;
