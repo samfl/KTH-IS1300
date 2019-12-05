@@ -1,9 +1,9 @@
 display.c:10:6:Set_cs	16	static
 display.c:14:6:Write_data	24	static
 display.c:24:6:Write_string	16	static
-display.c:30:6:Delay_spi	8	static
-display.c:34:6:Reset_display	8	static
-display.c:41:6:Display_color	16	static
-display.c:48:6:Write_ins	24	static
-display.c:58:6:Spi_rdy	8	static
-display.c:64:6:Init_display	8	static
+display.c:31:6:Delay_spi	8	static
+display.c:35:6:Reset_display	8	static
+display.c:42:6:Display_color	16	static
+display.c:49:6:Write_ins	24	static
+display.c:59:6:Spi_rdy	8	static
+display.c:65:6:Init_display	8	static

@@ -17,6 +17,7 @@
 
 void Set_cs(uint8_t);
 void Write_data(uint8_t);
+void Write_string(char*);
 void Reset_display(void);
 void Delay_spi(void);
 void Display_color(char[]);

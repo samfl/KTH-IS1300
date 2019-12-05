@@ -25,6 +25,7 @@ void Write_string(char * string) {
 	do {
 		Write_data(*string++);
 	} while(*string);
+	Set_cs(1);
 }
 
 void Delay_spi(void) {
@@ -94,20 +95,20 @@ void Init_display(void)
 	    Write_ins(0x01);
 
 	    // String Sequence Line 1
-	    Write_ins(0x80); //address
-	    Write_string("Sam");
+	    //Write_ins(0x80); //address
+	    //Write_string("Sam");
 
 	    // String Sequence Line 2
-	    Write_ins(0xa0); //address
-	    Write_string("Florin");
+	    // Write_ins(0xa0); //address
+	    // Write_string("Florin");
 
 	    // String Sequence Line 3
-	    Write_ins(0xc0); //address
-	    Write_string("S-tuna");
+	    // Write_ins(0xc0); //address
+	    // Write_string("S-tuna");
 
 	    // String Sequence Line 4
-	    Write_ins(0xe0); //address
-	    Write_string("TIDAB");
+	    // Write_ins(0xe0); //address
+	    // Write_string("TIDAB");
 
 	    // Stop Transmit
 	    Set_cs(1);

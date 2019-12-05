@@ -10,7 +10,9 @@
 #endif /* INC_TEST_H_ */
 
 #include <display.h>
+#include <rtc.h>
 
 void Test_program(void);
 void Test_display(void);
 void Test_display_background(char[]);
+void Test_rtc(void);
