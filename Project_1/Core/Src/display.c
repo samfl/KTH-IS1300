@@ -38,11 +38,11 @@ void Reset_display(void) {
 	HAL_Delay(100);
 }
 
-void Display_color(char color[]) {
-	if(strcmp(color, "red")) HAL_GPIO_WritePin(Display_red_GPIO_Port, Display_red_Pin, SET);
-	if(strcmp(color, "green")) HAL_GPIO_WritePin(Display_green_GPIO_Port, Display_green_Pin, SET);
-	if(strcmp(color, "white")) HAL_GPIO_WritePin(Display_white_GPIO_Port, Display_white_Pin, SET);
-	return;
+void Display_color(char* color) {
+	if(!strcmp(color, "red")) HAL_GPIO_WritePin(Display_red_GPIO_Port, Display_red_Pin, SET);
+	else if(!strcmp(color, "green")) HAL_GPIO_WritePin(Display_green_GPIO_Port, Display_green_Pin, SET);
+	else if(!strcmp(color, "white")) HAL_GPIO_WritePin(Display_white_GPIO_Port, Display_white_Pin, SET);
+	else printf("No color was set");
 }
 
 void Write_ins(uint8_t hexa){
@@ -70,30 +70,45 @@ void Init_display(void)
 	    HAL_GPIO_WritePin(Display_reset_GPIO_Port, Display_reset_Pin, GPIO_PIN_SET);
 	    HAL_Delay(10);
 
-	    Write_ins(0x3a);
-	    Write_ins(0x09); //4 line initiation
-	    Write_ins(0x06); //botton view
-	    Write_ins(0x1e);//bias setting
-	    Write_ins(0x39); //function set
-	    Write_ins(0x1b); //internal osc
-	    Write_ins(0x6e); //follower
-	    Write_ins(0x56); //power control
-	    Write_ins(0x7a); //contrast
-	    Write_ins(0x38); //function set
-		Write_ins(0x3a); //adress
-		Write_ins(0x72); //adress
+	    // Initialization Example
+	    Write_ins(0x3a); // function set: RE=1; REV=0
+	    Write_ins(0x09); // extended function set: 4-line initialization
+	    Write_ins(0x06); // entry mode set: Botton View
+	    Write_ins(0x1e); // bias setting: BS1 = 1
+	    Write_ins(0x39); // function set: RE=0, IS=1
+	    Write_ins(0x1b); // internal osc: BS0=1 -> Bias=1/6
+	    Write_ins(0x6e); // follower control: divider on and set value
+	    Write_ins(0x56); // power control: booster on and set contrast
+	    Write_ins(0x7a); // contrast set: DB3-DB0=C3-C0
+	    Write_ins(0x38); // function set: RE=0, IS=0
 
-		Write_data(0x00); //adress
-		Write_ins(0x38); //adress
-	    Write_ins(0x0f); //display on
-	    Write_ins(0x01); //adress
+		// Change View
+		Write_ins(0x3a); // function set: RE=1, IS=0
+		Write_ins(0x06); // entry mode: bottom view
+		Write_ins(0x38); // function set: RE=0, IS=0
 
-	    // DATA
-	    // One letter: Write_data(0xff);
-	    // String sequence: Write_string("your string!");
+		// Display On
+	    Write_ins(0x0f); // display on, cursor on, blink on
 
-	    Write_string("Hallo Bengan!");
+	    // Clear Display
+	    Write_ins(0x01);
+
+	    // String Sequence Line 1
+	    Write_ins(0x80); //address
+	    Write_string("Sam");
+
+	    // String Sequence Line 2
+	    Write_ins(0xa0); //address
+	    Write_string("Florin");
+
+	    // String Sequence Line 3
+	    Write_ins(0xc0); //address
+	    Write_string("S-tuna");
+
+	    // String Sequence Line 4
+	    Write_ins(0xe0); //address
+	    Write_string("TIDAB");
+
+	    // Stop Transmit
 	    Set_cs(1);
-	    Write_data(0xff); //ascii
-	    HAL_Delay(10);
 }
