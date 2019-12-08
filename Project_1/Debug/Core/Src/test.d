@@ -34,7 +34,7 @@ Core/Src/test.o: ../Core/Src/test.c ../Core/Inc/test.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../Core/Inc/gpio.h ../Core/Inc/rtc.h
+ ../Core/Inc/gpio.h ../Core/Inc/usart.h ../Core/Inc/rtc.h
 
 ../Core/Inc/test.h:
 
@@ -113,5 +113,7 @@ Core/Src/test.o: ../Core/Src/test.c ../Core/Inc/test.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 
 ../Core/Inc/gpio.h:
+
+../Core/Inc/usart.h:
 
 ../Core/Inc/rtc.h:

@@ -113,7 +113,7 @@ int main(void)
 	  	{
 		Error_Handler();
 	  	}
-	  HAL_UART_Receive(&huart5, &Tecken, 1, 1000);
+	  HAL_UART_Receive(&huart5, &Tecken, 6, 1000);
 	  HAL_UART_Transmit(&huart5, &Tecken, 1, 1000);
   }
   /* USER CODE END 3 */

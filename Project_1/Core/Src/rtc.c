@@ -25,14 +25,14 @@ char time[10];
 char date[10];
 
 
-void Set_time(void) {
+void Set_time(char this_time[]) {
 	  RTC_TimeTypeDef sTime = {0};
 	  RTC_DateTypeDef sDate = {0};
 	  /** Initialize RTC and set the Time and Date
 	  */
-	  sTime.Hours = 10;
-	  sTime.Minutes = 20;
-	  sTime.Seconds = 0;
+	  sTime.Hours = (this_time[0]-48)*10 + (this_time[1]-48);
+	  sTime.Minutes = (this_time[2]-48)*10 + (this_time[3]-48);
+	  sTime.Seconds = (this_time[4]-48)*10 + (this_time[5]-48);
 	  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
 	  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
 	  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)

@@ -1,4 +1,4 @@
 test.c:9:6:Test_program	8	static
-test.c:19:6:Test_display	8	static
-test.c:25:6:Test_display_background	16	static
-test.c:29:6:Test_rtc	8	static
+test.c:21:6:Test_display	8	static
+test.c:27:6:Test_display_background	16	static
+test.c:31:6:Test_rtc	16	static

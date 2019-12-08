@@ -10,6 +10,7 @@
 #endif /* INC_TEST_H_ */
 
 #include <display.h>
+#include <usart.h>
 #include <rtc.h>
 
 void Test_program(void);

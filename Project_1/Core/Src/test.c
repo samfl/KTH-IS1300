@@ -7,12 +7,14 @@
 #include <test.h>
 
 void Test_program(void) {
+
 	// OK
 	Test_display_background("green");
 	// OK
 	Test_display();
-
+	// OK - Input CLock in Set_time..
 	Test_rtc();
+
 	return;
 }
 
@@ -27,12 +29,13 @@ void Test_display_background(char color[]) {
 }
 
 void Test_rtc(void) {
-	Set_time();
-	Set_alarm();
-
+	Set_time(Input_clock());
+	char new_line = '\n\r';
 	for(;;) {
 		Write_ins(0x01);
 		Write_string(Get_time());
+		HAL_UART_Transmit(&huart5, Get_time(), 8, 1);
+		HAL_UART_Transmit(&huart5, &new_line, 2, 1);
 		HAL_Delay(1000);
 	}
 }

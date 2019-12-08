@@ -35,7 +35,7 @@
 extern RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN Private defines */
-void Set_time(void);
+void Set_time(char []);
 void Set_alarm(void);
 char* Get_time(void);
 /* USER CODE END Private defines */

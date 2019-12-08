@@ -21,7 +21,27 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
+char set_time[6];
+char* Input_clock(void) {
+	char *format_time = "Enter the Time in format HHMMSS: \n\r";
+	char *new_line = "\n\r";
+	char *input_done = "OK \n\r";
 
+	HAL_UART_Transmit(&huart5, (uint8_t*)format_time, strlen(format_time), 5000);
+
+	uint8_t i = 0;
+	// Input Buffer
+	HAL_UART_Receive(&huart5, set_time, 6, 10000);
+
+	// Output Buffer
+	HAL_UART_Transmit(&huart5, set_time, 6, 1);
+
+	// New Line OK
+	HAL_UART_Transmit(&huart5, (uint8_t*)new_line, strlen(input_done), 5000);
+	HAL_UART_Transmit(&huart5, (uint8_t*)input_done, strlen(input_done), 5000);
+
+	return set_time;
+}
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart4;
