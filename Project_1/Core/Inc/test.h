@@ -12,8 +12,10 @@
 #include <display.h>
 #include <usart.h>
 #include <rtc.h>
+#include <dimmer.h>
 
 void Test_program(void);
 void Test_display(void);
 void Test_display_background(char[]);
 void Test_rtc(void);
+void Test_potentiometer(void);

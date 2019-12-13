@@ -1,4 +1,5 @@
 test.c:9:6:Test_program	8	static
-test.c:21:6:Test_display	8	static
-test.c:27:6:Test_display_background	16	static
-test.c:31:6:Test_rtc	16	static
+test.c:23:6:Test_display	8	static
+test.c:29:6:Test_display_background	16	static
+test.c:33:6:Test_rtc	16	static
+test.c:45:6:Test_potentiometer	8	static

@@ -1,0 +1,3 @@
+dimmer.c:14:6:Init_potentiometer	8	static
+dimmer.c:22:6:HAL_ADC_ConvCpltCallback	16	static
+dimmer.c:32:6:Set_backlight_dimmer	48	static

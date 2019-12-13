@@ -1,16 +1,24 @@
 /*
  * display.c
  *
+ * Description: Functions to support initialization, reset, writing etc. to the display.
  *  Created on: Nov 25, 2019
  *      Author: samfl
  */
 
 #include <display.h>
 
+/**
+ *  Helper function to faster set the Chip Select bit for SPI communication.
+ */
 void Set_cs(uint8_t signal) {
 	HAL_GPIO_WritePin(CS_SPI2_GPIO_Port, CS_SPI2_Pin, signal);
 }
 
+
+/**
+ *  Helper function to write ONE character to the display.
+ */
 void Write_data(uint8_t hexa) {
     Spi_rdy();
 	uint8_t data[3];
@@ -21,6 +29,10 @@ void Write_data(uint8_t hexa) {
 	return;
 }
 
+
+/**
+ *  To write a string to the Display.
+ */
 void Write_string(char * string) {
 	do {
 		Write_data(*string++);
@@ -28,24 +40,32 @@ void Write_string(char * string) {
 	Set_cs(1);
 }
 
-void Delay_spi(void) {
-	HAL_Delay(10);
-}
 
+/**
+ *  To reset/clear the display.
+ */
 void Reset_display(void) {
 	HAL_GPIO_WritePin(Display_reset_GPIO_Port, Display_reset_Pin, SET);
-	Delay_spi();
+	HAL_Delay(10);
 	HAL_GPIO_WritePin(Display_reset_GPIO_Port, Display_reset_Pin, RESET);
 	HAL_Delay(100);
 }
 
+
+/**
+ *  To display a certain color, RED is disabled while demonstrating the PWM backlight dimmer.
+ */
 void Display_color(char* color) {
-	if(!strcmp(color, "red")) HAL_GPIO_WritePin(Display_red_GPIO_Port, Display_red_Pin, SET);
-	else if(!strcmp(color, "green")) HAL_GPIO_WritePin(Display_green_GPIO_Port, Display_green_Pin, SET);
+	//if(!strcmp(color, "red")) HAL_GPIO_WritePin(Display_red_GPIO_Port, Display_red_Pin, SET);
+	if(!strcmp(color, "green")) HAL_GPIO_WritePin(Display_green_GPIO_Port, Display_green_Pin, SET);
 	else if(!strcmp(color, "white")) HAL_GPIO_WritePin(Display_white_GPIO_Port, Display_white_Pin, SET);
 	else printf("No color was set");
 }
 
+
+/**
+ *  Helper function to write an instruction(configuration) to the display.
+ */
 void Write_ins(uint8_t hexa){
 	Spi_rdy();
 	uint8_t data[3];
@@ -56,18 +76,31 @@ void Write_ins(uint8_t hexa){
 	return;
 }
 
+
+/**
+ *  Helper function to improve readability in SPI communication funtions
+ */
 void Spi_rdy(void) {
     Set_cs(1);
     HAL_Delay(10);
     Set_cs(0);
 }
 
+/**
+ *  Helper function to improve readability in SPI communication funtions
+ */
+void Clear_display(void) {
+	Write_ins(0x01);
+}
+
+
+/**
+ *  To initialize the display, ready for writing DATA to.
+ */
 void Init_display(void)
 {
-		// Delay
-		Spi_rdy();
-
 	    // Reset Display
+		Spi_rdy();
 	    HAL_GPIO_WritePin(Display_reset_GPIO_Port, Display_reset_Pin, GPIO_PIN_SET);
 	    HAL_Delay(10);
 
@@ -92,7 +125,7 @@ void Init_display(void)
 	    Write_ins(0x0f); // display on, cursor on, blink on
 
 	    // Clear Display
-	    Write_ins(0x01);
+	    Clear_display();
 
 	    // String Sequence Line 1
 	    //Write_ins(0x80); //address
